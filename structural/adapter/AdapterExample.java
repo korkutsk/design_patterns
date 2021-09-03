@@ -1,7 +1,9 @@
 public class AdapterExample {
     public static void main(String[] args) {
-        CalculatorAdapter calculator = new CalculatorAdapter();
-        Triangle triangle = new Triangle(2, 5);
-        System.out.println(calculator.getArea(triangle));
+        Rectangle rectangle = new Rectangle(20, 20);
+        Triangle triangle = new Triangle(10, 5);
+        RectangleInterface adapter = new TriangleAdapter(triangle);
+        adapter.aboutRectangle();
+        System.out.println(adapter.calculateAreaOfRectangle());
     }
 }
