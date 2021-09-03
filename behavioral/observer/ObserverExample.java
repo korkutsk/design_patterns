@@ -1,4 +1,4 @@
-public class Main {
+public class ObserverExample {
     public static void main(String[] args) {
         SubjectInterface subject = new Subject();
         Observer observer1 = new BookObserver1(1);
