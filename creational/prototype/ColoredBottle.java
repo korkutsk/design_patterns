@@ -1,30 +1,25 @@
-public class ColoredBottle implements Bottle {
-    private String color;
+public class ColoredBottle extends Bottle {
+    private int size;
 
-    public ColoredBottle(String color) {
-        this.color = color;
+    public ColoredBottle(String color, int size) {
+        super(color);
+        this.size = size;
     }
 
-    public ColoredBottle(ColoredBottle bottle) {
-        this.color = bottle.getColor();
-    }
-
-
-    @Override
-    public void drink() {
-        System.out.println("Drunk from " + color + " Bottle");
-    }
-
-    public String getColor() {
-        return color;
+    public ColoredBottle(Bottle bottle) {
+        super(bottle.getColor());
     }
 
     @Override
-    public ColoredBottle cloneOb() {
+    public Bottle cloneOb() {
         return new ColoredBottle(this);
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
     }
 }
